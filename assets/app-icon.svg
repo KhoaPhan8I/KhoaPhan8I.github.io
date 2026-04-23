@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Vua Tho Media Hub icon</title>
+  <desc id="desc">A compact Vua Tho brand mark for TikTok app review.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f3d2e"/>
+      <stop offset="55%" stop-color="#1f6f54"/>
+      <stop offset="100%" stop-color="#f3b23c"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="116" fill="url(#bg)"/>
+  <path d="M139 318h234v47H139z" fill="#fff8e6"/>
+  <path d="M181 318V208l75-64 75 64v110h-49v-86l-26-22-26 22v86z" fill="#fff8e6"/>
+  <path d="M318 142l53 53-34 34-53-53z" fill="#20201d"/>
+  <path d="M346 112l54 54-24 24-54-54z" fill="#fff8e6"/>
+  <path d="M122 387h268v34H122z" fill="#20201d" opacity=".82"/>
+</svg>
