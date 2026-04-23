@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TikTok Authorization Callback</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <p class="eyebrow">TikTok Callback</p>
+      <h1>Return to Vua Tho Media Hub</h1>
+      <p id="status">Preparing authorization result...</p>
+      <div class="actions">
+        <a id="local-link" href="http://127.0.0.1:8000/connections">Open local app</a>
+        <a href="/">Back to website</a>
+      </div>
+      <p class="muted">
+        This static page does not store tokens or secrets. It only forwards the authorization code to the local app so
+        the local app can exchange it securely.
+      </p>
+    </section>
+  </main>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const local = new URL("http://127.0.0.1:8000/tiktok/import");
+    for (const key of ["code", "state", "scopes", "error", "error_description"]) {
+      const value = params.get(key);
+      if (value) local.searchParams.set(key, value);
+    }
+    const link = document.getElementById("local-link");
+    link.href = local.toString();
+    document.getElementById("status").textContent = params.get("error")
+      ? "TikTok returned an error. Open the local app to view details."
+      : "TikTok authorization returned. Click the button to finish setup in the local app.";
+  </script>
+</body>
+</html>
